@@ -101,15 +101,15 @@ In this task, you will on-board and configure Microsoft Defender for Cloud.
 
 1. In the Azure portal, in the **Search resources, services, and docs** text box at the top of the Azure portal page, type **Microsoft Defender for Cloud** and press the **Enter** key.
 
-1. On the **Microsoft Defender for Cloud | Getting started** blade, click **Upgrade**. 
+1. On the **Getting started** blade, click **Upgrade**.
 
     >**Note:** You might need to refresh the Edge browser and click **Upgrade** again to continue with the next step.
      
-1. On the **Microsoft Defender for Cloud | Getting started** blade, in the Install agents tab, scroll down and click **Install agents**.
+1. On the **Getting started** blade, in the Install agents tab, scroll down and click **Install agents**.
 
 1. Navigate to **Microsoft Defender for Cloud** and click **Environment Settings** under the *Management* settings, in the vertical menu bar on the left side.
 
-1. On the **Microsoft Defender for Cloud | Environment Settings** blade, click the **Expand all** button and then select the relevant Azure subscription. 
+1. On the **Environment Settings** blade, click the **Expand all** button and then select the relevant Azure subscription. **Hint:** You might need to hide the left blade by using **<<** to see the subscription.
 
 1. On the **Defender plans** blade, click the **Enable all** button to enable all Microsoft Defender for Cloud plans.
 
@@ -121,7 +121,9 @@ In this task, you will on-board and configure Microsoft Defender for Cloud.
 
 1. On the *Log analytics agent / Azure Monitor agent* line item, click the **Edit configuration** link.
 
-1. Review the *Agent type*, *Workspace selection* selected option. Under *Security events storage* click the drop down menu and select **Common** and click **Apply**.
+    >**Note:** If you get an error that a the log analytics workspace is missing, just refresh the Edge browser to continue.
+
+1. Under *Agent type*, select **Azure Monitor Agent (Preview)** and click **Apply**.
 
 1. Toggle **On** to enable *Vulnerability assessment for machines* and click **Apply** to accept the *Microsoft Defender vulnerability management* solution.
 
@@ -156,19 +158,29 @@ In this task, you will review cloud security posture management (CSPM). Note tha
 
 1. In the Azure portal, in the **Search resources, services, and docs** text box at the top of the Azure portal page, type **Microsoft Defender for Cloud** and press the **Enter** key.
 
-1. Under *General*, select **Recommendations** in the portal menu.
+1. Under *General*, click **Recommendations** in the portal menu.
 
 1. Inside the *Search recommendations* text box, type **All network ports** and click on the recommendation shown. 
 
 1. Read the *Description*, *Remediation steps* and *Affected resources*. 
 
-1. Make sure that **myvm** is selected and then click the **Assign owner** button.
+1. Click the checkbox to select **myvm** and then click the **Assign owner** button.
 
-1. Click the **Select owner** button and start writing down your admin account email address and select it from the list and click **Back**.
+1. Click the **Select owner** button and write down your admin account email address and select it. Click **Back**.
 
 1. Your admin account should now be shown under *Owner*. Select a *Due date* in the future, read the other options and click **Save**.
 
 1. Review the message under the *Status* column and close the recommendation by clicking *x* on the top right.
+
+1. Under *General*, click **Inventory** in the portal menu. You should see your virtual machine, virtual network and subnet on the list.
+
+1. Under *Resource name*, click **MyVM**.
+
+1. Review the virtual machine information and select one **Log Analytics agent should be installed on virtual machines** recommendation.
+
+1. Click the **Fix** button, select the **Default Workspace** and then click **Fix 1 resource**.
+
+1. Close the recommendation and the resource health pages by clicking *x* on the top right twice.
 
 1. Under *Cloud Security*, select **Security posture** in the portal menu.
 
@@ -194,15 +206,16 @@ In this task, you will load sample security alerts and review the alert details.
 1. Filter by your preferred *Resource type* and for the alerts that grabbed your attention, perform the following actions:
 
     - Select the alert. General information about the alert should appear on the right pane.
+    - Change the status to **In Progress** and click **OK** to save the change. Wait for the change to take effect.
     - Click the **View full details** button.
-    - Review and read the *Alert details* tab.
-    - Select the **Take action** tab or select the **Next: Take Action** button at the end of the page.
-    - Review the *Take action* information. Notice the sections available to take action depending on the type of alert: Inspect resource context, Mitigate the threat, Prevent future attacks, Trigger automated response and Suppress similar alerts.
+    - Review and read the content of the *Alert details* tab.
+    - Select the **Take action** tab or click the **Next: Take Action** button at the end of the page.
+    - Review the *Take action* information. Notice the sections available depending on the type of alert: *Inspect resource context*, *Mitigate the threat*, *Prevent future attacks*, *Trigger automated response* and *Suppress similar alerts*.
     - Close the alert by click on the **x** at the top right of the page.
 
 1. Under *Cloud Security*, select **Workload protections** in the portal menu.
 
-1. Notice the number of alerts generated for today, it should show at least 7 alerts of different severities. **Hint:** You might need to refresh the Edge browser to see them.
+1. Notice the number of alerts generated for today, it should show at least 77 alerts of different severities. **Hint:** You might need to refresh the Edge browser to see them.
 
 1. Go to the right pane and read about the *Most prevalent security alerts* and *Most attacked resources*
 
