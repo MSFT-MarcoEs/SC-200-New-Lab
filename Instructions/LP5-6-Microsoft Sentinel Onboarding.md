@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Microsoft Sentinel'
+    title: 'Microsoft Sentinel Onboarding'
     module: 'Learning Path 5 - Configure your Microsoft Sentinel environment'
 ---
 
@@ -83,7 +83,8 @@ In this task, you will create an Azure Virtual Machine to get recommendations fr
 In this exercise, you will complete the following tasks:
 
 - Task 1: Enable Microsoft Sentinel
-- Task 2: Set up data connectors
+- Task 2: Onboard Microsoft Sentinel Solutions
+- Task 3: Set up stand-alone data connectors
 
 
 ### Task 1: Enable Microsoft Sentinel
@@ -120,41 +121,53 @@ In this task, you will on-board and configure Microsoft Sentinel.
 1. Read the message under *Microsoft Sentinel free trial activated* and click **OK** to continue
 
 
-### Task 2: Set up data connectors
+### Task 2: Onboard Microsoft Sentinel Solutions
 
-In this task, you will configure Microsoft Sentinel to use the Windows Security Events via AMA, Azure Activity, Network Security Groups, and Storage Accounts data connectors.
+Solutions in Microsoft Sentinel provide a consolidated way to acquire Microsoft Sentinel content, like data connectors, workbooks, analytics, and automation, in your workspace with a single deployment step.
 
-1. In the Azure portal, on the **Microsoft Sentinel - Overview** blade, under the **Configuration** section, click **Data connectors**. 
+In this task, you will configure Microsoft Sentinel to use the Content hub (Preview) to onboard Solutions.
 
-1. On the **Data connectors** blade, review the list of available connectors and that none are in a Connected state. 
+1. In the left blade, scroll down and under *Content management* clik on **Content hub (Preview)**.
 
-1. Type **Windows** into the search bar and select the entry representing the **Windows Security Events via AMA** data connector (hide the menu bar on the left using **<<** if needed), review its description and status, and then click **Open connector page**.
+1. In the search box, type **Windows Security** and select the **Windows Security Events** solution.
 
-1. On the **Windows Security Events via AMA** data connector blade, the **Instructions** tab should be selected, note the **Prerequisites** and scroll down to the **Configuration**.
+1. On the right pane, read the *Description*, *Content type* available in the solution and then click the **Install** button.
 
-1. The Azure Monitor Agent (AMA) relies on Data Collection Rules (DCR) to send data to a Log Analytics workspace. Click **Create data collection rule**.
+1. On the *Windows Security Events* solution click the **Create** button.
 
-1. Type **CommonSecurityEvents** for *Rule Name* and click the **Next: Resources** button.
+1. Scroll down and make sure the *Subscription* and *Resource group* are filled with the details where your Sentinel workspace is located and then select the drop-down menu for *Workspace* and select **MySentinelWorkspace**.
 
-1. Click the **Add resource(s)** button and type **MyVM** in the search box.
+1. Click on the **Next: Data Connectors** button and read the message regarding *Data Connectors*.
 
-1. Select the checkbox of *MyVM* and click the **Apply** button.
+1. Click on the **Next: Workbooks** button and read the message regarding *Workbooks*.
 
-1. Click the **Next: Collect** button to continue.
+1. Click on the **Next: Analytics** button and read the message regarding *Analytics* rules. In this page you will get more information about the individual analytic rule templates that are going to be added to Microsoft Sentinel.
 
-1. Hover the mouse pointer over the **(i)** to learn about the different stream options. Select **Common** and click the **Next: Review + create** button.
+1. Click on the **Next: Hunting Queries** button and read the message regarding *Hunting Queries*. In this page you will get more information about the individial hunting query templates  that are going to be added to Microsoft Sentinel.
 
-1. Read the summary of your configurations and click the **Create** button. You should observe three succeeded status messages: **Creating Data Collection Rule Association succeeded, Successfully enabled identity, and Successfully installed extension**.
+1. Click on the **Next: Review + Create** button and select the **Create** button to deploy the solution.
 
-    >**Note**: You can check the *Notifications* bell icon to verify the three successful tasks.
+    >**Note:** Bear in mind that the solution only deploy the template mentioned on each step, you should configure them afterwards.
 
-1. On the **Windows Security Events via AMA** data connector blade, click the **Next steps** tab.
+1. In the Azure portal, in the **Search resources, services, and docs** text box at the top of the Azure portal page, type **Microsoft Sentinel** and press the **Enter** key or select **Microsoft Sentinel** from the *Recent services* drop-down.
 
-1. Review the available *Recommended workbooks*, *Query samples*, and *Relevant analytics templates* available for this connector.
+1. Select the **MySentinelWorkspace** Sentinel workspace.
 
-1. Go back to the **Microsoft Sentinel - Data Connectors** page by closing the data connector blade when you click the **x** at the top right.
+1. In the left blade, scroll down and under *Content management* clik on **Content hub (Preview)**.
 
-1. Type **Azure** into the search bar and select the entry representing the **Azure Activity** data connector (hide the menu bar on the left using **<<** if needed), review its description and status, and then click **Open connector page**.
+1. In the search box, type **Azure Activity** and select the **Azure Activity** solution.
+
+1. On the right pane, read the *Description*, *Content type* available in the solution (notice that there are less templates that the previous deployed solution) and then click the **Install** button.
+
+1. Follow the same steps as the **Windows Security Events** to onboard this solution.
+
+1. Go back to **Microsoft Sentinel** and under *Content management* clik on **Content hub (Preview)**.
+
+1. Filter the content by selecting **Status: Installed** and click the **Apply** button.
+
+1. Select the **Azure Activity** solution and in the right pane, click the **Manage** button.
+
+1. You now see all the installed content items from the solution. Select the first item, **Azure Activity**, that corresponds to the data connector and click the **Open connector page** button.
 
 1. On the **Azure Activity** data connector blade, the **Instructions** tab should be selected, note the **Prerequisites** and scroll down to the **Configuration**. Take note of the information describing the connector update. Your Azure Pass subscription never used the legacy connection method so you can skip step 1 (the *Disconnect All* button will be grayed out) and proceed to step 2.
 
@@ -186,11 +199,82 @@ In this task, you will configure Microsoft Sentinel to use the Windows Security 
 
 1. Review the available *Recommended workbooks*, *Query samples*, and *Relevant analytics templates* available for this connector.
 
+1. Go back to the **Azure Activity** solutions page by closing the data connector blade when you click the **x** at the top right.
+
+1. Go back to the installed solutions page by closing the data connector blade when you click the **x** at the top right.
+
+1. Now select the **Windows Security Events** solution and in the right pane, click the **Manage** button.
+
+1. You now see all the installed content items from the solution. Select the second item, **Windows Security Events via AMA**, that corresponds to the data connector and click the **Open connector page** button.
+
+1. On the **Windows Security Events via AMA** data connector blade, the **Instructions** tab should be selected, note the **Prerequisites** and scroll down to the **Configuration**.
+
+1. The Azure Monitor Agent (AMA) relies on Data Collection Rules (DCR) to send data to a Log Analytics workspace. Click **Create data collection rule**.
+
+1. Type **CommonSecurityEvents** for *Rule Name* and click the **Next: Resources** button.
+
+1. Click the **Add resource(s)** button and type **MyVM** in the search box.
+
+1. Select the checkbox of *MyVM* and click the **Apply** button.
+
+1. Click the **Next: Collect** button to continue.
+
+1. Hover the mouse pointer over the **(i)** to learn about the different stream options. Select **Common** and click the **Next: Review + create** button.
+
+1. Read the summary of your configurations and click the **Create** button. You should observe three succeeded status messages: **Creating Data Collection Rule Association succeeded, Successfully enabled identity, and Successfully installed extension**.
+
+    >**Note**: You can check the *Notifications* bell icon to verify the three successful tasks.
+
+1. On the **Windows Security Events via AMA** data connector blade, click the **Next steps** tab.
+
+1. Review the available *Recommended workbooks*, *Query samples*, and *Relevant analytics templates* available for this connector.
+
+1. Go back to the **Windows Security Events** solution page by closing the data connector blade when you click the **x** at the top right.
+
+1. Go back to the installed solutions page by closing the data connector blade when you click the **x** at the top right.
+
+
+### Task 3: Set up stand-alone data connectors
+
+In this task, you will configure Microsoft Sentinel to use the Network Security Groups (NSG) and Storage Accounts data connectors.
+
+1. In *Microsoft Sentinel*, scroll down the left blade and under the *Configuration* section, click **Data connectors**. 
+
+1. On the **Data connectors** blade, review the list of available connectors and that none are in a Connected state. 
+
+1. Type **Network** into the search bar and select the entry representing the **Network Security Groups** data connector (hide the menu bar on the left using **<<** if needed), review its description and status, and then click **Open connector page**.
+
+1. On the **Network Security Groups** data connector blade, the **Instructions** tab should be selected, note the *Prerequisites* and scroll down to the *Configuration* and take note of the information described here.
+
+1. Review the *Launch the Azure Policy Assignment wizard and follow the steps* instructions then click **Launch the Azure Policy Assignment wizard**.
+
+1. On the *Configure diagnostic settings for Azure Network Security Groups to Log Analytics workspace* assign policy page, under the *Basics* tab, click the ellipsis **(...)** button under *Scope*.
+
+1. In the *Scope* blade choose your Azure Pass subscription from the drop-down subscription list and click the **Select** button at the bottom of the page.
+
+    >**Note**: *Do not* choose a Resource Group
+
+1. Click the **Next** button **twice** at the bottom of the **Basics** tab to proceed to the **Parameters** tab. 
+
+1. On the **Parameters** tab, under *Primary Log Analytics workspace*, click the ellipsis **(...)** button.
+
+1. In the **Primary Log Analytics workspace** page, make sure your Azure pass subscription is selected and use the **workspaces** drop-down to select the Log Analytics workspace you are using for Sentinel. When done click the **Select** button at the bottom of the page.
+
+1. Click the **Next** button at the bottom of the *Parameters* tab to proceed to the *Remediation* tab. 
+
+1. On the *Remediation* tab select the **Create a remediation task** checkbox. This will enable the *Configure Azure Activity logs to stream to specified Log Analytics workspace* in the **Policy to remediate** drop-down. Make sure that in the **System assigned identity location** drop-down, matches the region that you selected earlier for your Log Analytics workspace.
+
+1. Click the **Review + Create** button at the bottom of the *Remediation* tab.
+
+1. Click the **Create** button. You should observe three succeeded status messages: **Creating policy assignment succeeded, Role Assignments creation succeeded, and Remediation task creation succeeded**.
+
+    >**Note**: You can check the *Notifications* bell icon to verify the three successful tasks.
+
+1. On the *Network Security Groups* data connector blade, click the **Next steps** tab.
+
+1. Review the available *Recommended workbooks*, *Query samples*, and *Relevant analytics templates* available for this connector.
+
 1. Go back to the **Microsoft Sentinel - Data Connectors** page by closing the data connector blade when you click the **x** at the top right.
-
-1. Type **Network** into the search bar and select the entry representing the **Network Security Groups (NSG)** data connector (hide the menu bar on the left using **<<** if needed), review its description and status, and then click **Open connector page**.
-
-1. Repeat the same steps you have done for the Azure Activity connector to onbard NSG data into Microsoft Sentinel using Azure Policy.
 
 1. Type **Azure** into the search bar and select the entry representing the **Azure Storage Account** data connector (hide the menu bar on the left using **<<** if needed), review its description and status, and then click **Open connector page**.
 
