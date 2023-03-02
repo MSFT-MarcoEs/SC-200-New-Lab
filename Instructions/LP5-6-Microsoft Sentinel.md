@@ -1,9 +1,10 @@
+---
 lab:
-    title: 'Microsoft Sentinel'
+    title: 'Microsoft Sentinel Onboarding'
     module: 'Learning Path 5 - Configure your Microsoft Sentinel environment'
 ---
 
-# Learning Path 5: Microsoft Sentinel
+# Learning Path 5: Configure your Microsoft Sentinel environment
 
 ## Lab scenario
 

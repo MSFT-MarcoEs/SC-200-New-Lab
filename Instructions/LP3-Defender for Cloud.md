@@ -4,7 +4,7 @@ lab:
     module: 'Learning Path 3 - Mitigate threats using Microsoft Defender for Cloud'
 ---
 
-# Learning Path 3: Microsoft Defender for Cloud
+# Learning Path 3: Mitigate threats using Microsoft Defender for Cloud
 
 ## Lab scenario
 
