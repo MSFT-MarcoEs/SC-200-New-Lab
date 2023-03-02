@@ -217,6 +217,6 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. Notice the number of alerts generated for today, it should show at least 77 alerts of different severities. **Hint:** You might need to refresh the Edge browser to see them.
 
-1. Go to the right pane and read about the *Most prevalent security alerts* and *Most attacked resources*
+1. Go to the right pane and read about the *Most prevalent security alerts* and *Most attacked resources*.
 
 # End of lab
